@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 300" width="850" height="300">
   <defs>
-        <style>
+            <style>
       @keyframes cursorBlink {
         0%, 100% { opacity: 0; }
         50% { opacity: 1; }
@@ -8,34 +8,34 @@
 
       @keyframes travelWave {
         0% {
-          stroke-dashoffset: 260;
+          stroke-dashoffset: 320;
           opacity: 0;
         }
-        15% {
+        12% {
           opacity: 1;
         }
         85% {
           opacity: 1;
         }
         100% {
-          stroke-dashoffset: -40;
+          stroke-dashoffset: -50;
           opacity: 0;
         }
       }
 
       @keyframes beaconRing {
         0% {
-          r: 2;
+          r: 3;
           opacity: 0.9;
-          stroke-width: 1.2;
+          stroke-width: 1.5;
         }
         60% {
-          r: 7;
+          r: 9;
           opacity: 0;
           stroke-width: 0.5;
         }
         100% {
-          r: 7;
+          r: 9;
           opacity: 0;
           stroke-width: 0;
         }
@@ -43,7 +43,7 @@
 
       @keyframes beaconCore {
         0%, 100% {
-          opacity: 0.6;
+          opacity: 0.7;
           fill: #58a6ff;
         }
         50% {
@@ -53,8 +53,8 @@
       }
 
       @keyframes subtleGlow {
-        0%, 100% { opacity: 0.3; }
-        50% { opacity: 0.6; }
+        0%, 100% { opacity: 0.35; }
+        50% { opacity: 0.7; }
       }
 
       .cursor-block {
@@ -62,7 +62,7 @@
       }
 
       .curve-wave {
-        stroke-dasharray: 45 220;
+        stroke-dasharray: 65 260;
         animation: travelWave 3.2s cubic-bezier(0.2, 0.8, 0.4, 1) infinite;
       }
 
@@ -75,16 +75,17 @@
       }
 
       .asymptote-line {
-        animation: subtleGlow 4s ease-in-out infinite;
+        animation: subtleGlow 3.5s ease-in-out infinite;
       }
     </style>
 
     <!-- Linear Gradients for Asymptote Curve -->
     <linearGradient id="curveGrad" x1="0%" y1="100%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#388bfd" stop-opacity="0.3"/>
-      <stop offset="60%" stop-color="#58a6ff" stop-opacity="1"/>
+      <stop offset="50%" stop-color="#58a6ff" stop-opacity="1"/>
       <stop offset="100%" stop-color="#79c0ff" stop-opacity="1"/>
     </linearGradient>
+
 
     <!-- Faint Blueprint/Dot Grid Pattern -->
     <pattern id="dotGrid" width="16" height="16" patternUnits="userSpaceOnUse">
@@ -122,47 +123,45 @@
   <rect x="283" y="30" width="5" height="1" fill="#58a6ff"/>
   <rect x="283" y="270" width="5" height="1" fill="#58a6ff"/>
 
-  <!-- HEADER TEXT: philosophical quote -->
-  <text x="320" y="86"
+  <!-- HEADER TEXT: philosophical quote (enlarged) -->
+  <text x="315" y="74"
         font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', 'Consolas', monospace"
-        font-size="16.5" font-weight="600" fill="#e6edf3" letter-spacing="0.3">
+        font-size="18" font-weight="600" fill="#e6edf3" letter-spacing="0.35">
     Understanding is asymptotic; curiosity, unbounded
   </text>
-  <text x="320" y="109"
+  <text x="315" y="98"
         font-family="'PingFang SC', 'Noto Sans SC', 'Microsoft YaHei', sans-serif"
-        font-size="11.5" font-weight="400" fill="#8b949e" letter-spacing="1.8">
+        font-size="12.5" font-weight="400" fill="#8b949e" letter-spacing="2">
     &#x6C42;&#x77E5;&#x65E0;&#x6B62;&#x5883;&#xFF0C;&#x63A2;&#x7D22;&#x65E0;&#x8FB9;&#x754C;&#x3002;
   </text>
-  <rect class="cursor-block" x="484" y="99" width="5" height="12" fill="#58a6ff" opacity="0.8"/>
+  <rect class="cursor-block" x="496" y="87" width="5.5" height="13" fill="#58a6ff" opacity="0.8"/>
 
   <!-- Subtle separator line -->
-  <line x1="320" y1="126" x2="810" y2="126" stroke="#21262d" stroke-width="1"/>
+  <line x1="315" y1="114" x2="825" y2="114" stroke="#21262d" stroke-width="1"/>
 
-  <!-- IDE / TERMINAL BLOCK -->
-  <rect x="320" y="142" width="490" height="128" rx="6" fill="#010409" stroke="#21262d" stroke-width="1"/>
+  <!-- IDE / TERMINAL BLOCK (Enlarged and expanded) -->
+  <rect x="315" y="128" width="510" height="152" rx="7" fill="#010409" stroke="#21262d" stroke-width="1"/>
   
   <!-- Terminal Header / macOS dots -->
-  <rect x="320" y="142" width="490" height="24" rx="6" fill="#161b22"/>
-  <rect x="320" y="162" width="490" height="4" fill="#161b22"/>
-  <line x1="320" y1="166" x2="810" y2="166" stroke="#21262d" stroke-width="1"/>
+  <rect x="315" y="128" width="510" height="26" rx="7" fill="#161b22"/>
+  <rect x="315" y="150" width="510" height="4" fill="#161b22"/>
+  <line x1="315" y1="154" x2="825" y2="154" stroke="#21262d" stroke-width="1"/>
   
-  <circle cx="335" cy="154" r="3.5" fill="#ff5f56" opacity="0.85"/>
-  <circle cx="347" cy="154" r="3.5" fill="#ffbd2e" opacity="0.85"/>
-  <circle cx="359" cy="154" r="3.5" fill="#27c93f" opacity="0.85"/>
-  <text x="565" y="157" text-anchor="middle" font-family="'Consolas', monospace" font-size="10" fill="#8b949e">asymptote.py</text>
-  <text x="795" y="157" text-anchor="end" font-family="'Consolas', monospace" font-size="9" fill="#58a6ff" opacity="0.7">lim &#x2192; 1.0</text>
+  <circle cx="332" cy="141" r="3.8" fill="#ff5f56" opacity="0.85"/>
+  <circle cx="345" cy="141" r="3.8" fill="#ffbd2e" opacity="0.85"/>
+  <circle cx="358" cy="141" r="3.8" fill="#27c93f" opacity="0.85"/>
+  <text x="570" y="145" text-anchor="middle" font-family="'Consolas', monospace" font-size="10.5" fill="#8b949e">asymptote.py</text>
+  <text x="810" y="145" text-anchor="end" font-family="'Consolas', monospace" font-size="9.5" fill="#58a6ff" opacity="0.8">lim &#x2192; 1.0</text>
 
-  <!-- LEFT: CODE DEFINITION (Asymptotic Understanding) -->
-  <g font-family="'Consolas', 'JetBrains Mono', monospace" font-size="10.5">
-    <text x="336" y="186" fill="#8b949e"># knowledge approaches limit</text>
-    
-    <text x="336" y="203">
+  <!-- LEFT: CODE DEFINITION (No comments, enlarged text) -->
+  <g font-family="'Consolas', 'JetBrains Mono', monospace" font-size="12">
+    <text x="334" y="185">
       <tspan fill="#ff7b72">def </tspan>
       <tspan fill="#d2a8ff">knowledge</tspan>
       <tspan fill="#c9d1d9">(t):</tspan>
     </text>
 
-    <text x="336" y="220">
+    <text x="334" y="208">
       <tspan fill="#c9d1d9">    </tspan>
       <tspan fill="#ff7b72">return </tspan>
       <tspan fill="#79c0ff">1.0 </tspan>
@@ -171,9 +170,7 @@
       <tspan fill="#c9d1d9">(-t)</tspan>
     </text>
 
-    <text x="336" y="240" fill="#8b949e"># curiosity: unbounded</text>
-
-    <text x="336" y="257">
+    <text x="334" y="240">
       <tspan fill="#79c0ff">curiosity </tspan>
       <tspan fill="#ff7b72">= </tspan>
       <tspan fill="#ffa657">float</tspan>
@@ -181,41 +178,46 @@
       <tspan fill="#a5d6ff">"inf"</tspan>
       <tspan fill="#c9d1d9">)</tspan>
     </text>
+
+    <text x="334" y="262">
+      <tspan fill="#d2a8ff">explore</tspan>
+      <tspan fill="#c9d1d9">()</tspan>
+    </text>
   </g>
 
   <!-- VERTICAL DIVIDER -->
-  <line x1="545" y1="172" x2="545" y2="262" stroke="#21262d" stroke-width="1" stroke-dasharray="2 3"/>
+  <line x1="535" y1="160" x2="535" y2="272" stroke="#21262d" stroke-width="1" stroke-dasharray="2 3"/>
 
-  <!-- RIGHT: MATHEMATICAL ASYMPTOTE VISUALIZATION -->
+  <!-- RIGHT: MATHEMATICAL ASYMPTOTE VISUALIZATION (Enlarged) -->
   <g>
     <!-- Axis lines -->
-    <line x1="562" y1="254" x2="792" y2="254" stroke="#30363d" stroke-width="1"/>
-    <line x1="562" y1="257" x2="562" y2="182" stroke="#30363d" stroke-width="1"/>
+    <line x1="552" y1="262" x2="805" y2="262" stroke="#30363d" stroke-width="1"/>
+    <line x1="552" y1="265" x2="552" y2="168" stroke="#30363d" stroke-width="1"/>
 
     <!-- Coordinate labels -->
-    <text x="556" y="257" text-anchor="end" font-family="'Consolas', monospace" font-size="8" fill="#484f58">0</text>
-    <text x="556" y="196" text-anchor="end" font-family="'Consolas', monospace" font-size="8" fill="#58a6ff" opacity="0.8">1.0</text>
-    <text x="792" y="264" text-anchor="end" font-family="'Consolas', monospace" font-size="8" fill="#8b949e">t &#x2192; &#x221e;</text>
+    <text x="545" y="265" text-anchor="end" font-family="'Consolas', monospace" font-size="9" fill="#484f58">0</text>
+    <text x="545" y="183" text-anchor="end" font-family="'Consolas', monospace" font-size="9" fill="#58a6ff" opacity="0.85">1.0</text>
+    <text x="805" y="274" text-anchor="end" font-family="'Consolas', monospace" font-size="9.5" fill="#8b949e">t &#x2192; &#x221e;</text>
 
-    <!-- Horizontal Asymptote Line (y = 193) -->
-    <line class="asymptote-line" x1="562" y1="193" x2="792" y2="193"
-          stroke="#58a6ff" stroke-width="1" stroke-dasharray="3 4" opacity="0.35"/>
-    <text x="792" y="188" text-anchor="end" font-family="'Consolas', monospace" font-size="8" fill="#58a6ff" opacity="0.65">lim f(t) = 1.0</text>
+    <!-- Horizontal Asymptote Line (y = 180) -->
+    <line class="asymptote-line" x1="552" y1="180" x2="805" y2="180"
+          stroke="#58a6ff" stroke-width="1" stroke-dasharray="4 4" opacity="0.4"/>
+    <text x="805" y="174" text-anchor="end" font-family="'Consolas', monospace" font-size="9" fill="#58a6ff" opacity="0.75">L = 1.0 (asymptote)</text>
 
-    <!-- Base Curve: static faint trajectory -->
-    <path d="M 562,254 C 595,218 640,199 685,194.5 C 725,193.3 760,193.1 785,193.04"
-          fill="none" stroke="#1f6feb" stroke-width="1.2" opacity="0.25" stroke-linecap="round"/>
+    <!-- Base Curve: static faint trajectory (larger span) -->
+    <path d="M 552,262 C 590,210 645,186 705,181.5 C 745,180.3 780,180.1 800,180.04"
+          fill="none" stroke="#1f6feb" stroke-width="1.5" opacity="0.25" stroke-linecap="round"/>
 
     <!-- Dynamic knowledge wave traveling asymptotically towards limit -->
     <path class="curve-wave"
-          d="M 562,254 C 595,218 640,199 685,194.5 C 725,193.3 760,193.1 785,193.04"
-          fill="none" stroke="url(#curveGrad)" stroke-width="2" stroke-linecap="round"/>
+          d="M 552,262 C 590,210 645,186 705,181.5 C 745,180.3 780,180.1 800,180.04"
+          fill="none" stroke="url(#curveGrad)" stroke-width="2.5" stroke-linecap="round"/>
 
-    <!-- Horizon Beacon at frontier point (785, 193.04) -->
-    <circle class="beacon-ring" cx="785" cy="193.04" r="2.5" fill="none" stroke="#58a6ff"/>
-    <circle class="beacon-core" cx="785" cy="193.04" r="2.5"/>
+    <!-- Horizon Beacon at frontier point (800, 180.04) -->
+    <circle class="beacon-ring" cx="800" cy="180.04" r="3" fill="none" stroke="#58a6ff"/>
+    <circle class="beacon-core" cx="800" cy="180.04" r="3"/>
 
-    <!-- Unbounded Curiosity Micro-Tag -->
-    <text x="670" y="244" font-family="'Consolas', monospace" font-size="8" fill="#bc8cff" opacity="0.75">curiosity: [ &#x221e; ]</text>
+    <!-- Unbounded Curiosity Badge -->
+    <text x="685" y="250" font-family="'Consolas', monospace" font-size="9.5" fill="#bc8cff" opacity="0.85">curiosity: [ &#x221e; ]</text>
   </g>
 </svg>
