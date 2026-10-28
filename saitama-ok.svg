@@ -1,43 +1,90 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 300" width="850" height="300">
   <defs>
-    <style>
-      @keyframes type {
-        0%, 100% { clip-path: inset(0 100% 0 0); }
-        20%, 80% { clip-path: inset(0 0% 0 0); }
+        <style>
+      @keyframes cursorBlink {
+        0%, 100% { opacity: 0; }
+        50% { opacity: 1; }
       }
 
-      @keyframes cursorSlide {
-        0%, 100% { transform: translateX(0); }
-        20%, 80% { transform: translateX(290px); }
+      @keyframes travelWave {
+        0% {
+          stroke-dashoffset: 260;
+          opacity: 0;
+        }
+        15% {
+          opacity: 1;
+        }
+        85% {
+          opacity: 1;
+        }
+        100% {
+          stroke-dashoffset: -40;
+          opacity: 0;
+        }
       }
 
-      @keyframes cursorBlink { 0%, 100% { opacity: 0; } 50% { opacity: 1; } }
-
-      @keyframes typeLine1 { 0%, 10% { opacity: 0; } 15%, 100% { opacity: 1; } }
-      @keyframes typeLine2 { 0%, 25% { opacity: 0; } 30%, 100% { opacity: 1; } }
-      @keyframes typeLine3 { 0%, 40% { opacity: 0; } 45%, 100% { opacity: 1; } }
-      @keyframes typeLine4 { 0%, 55% { opacity: 0; } 60%, 100% { opacity: 1; } }
-
-      @keyframes pulseHeatmap {
-        0%, 100% { opacity: 0.6; fill: #26a641; }
-        50% { opacity: 1; fill: #39d353; }
+      @keyframes beaconRing {
+        0% {
+          r: 2;
+          opacity: 0.9;
+          stroke-width: 1.2;
+        }
+        60% {
+          r: 7;
+          opacity: 0;
+          stroke-width: 0.5;
+        }
+        100% {
+          r: 7;
+          opacity: 0;
+          stroke-width: 0;
+        }
       }
-      @keyframes pulseHeatmapSlow {
-        0%, 100% { opacity: 0.4; fill: #006d32; }
-        50% { opacity: 0.8; fill: #26a641; }
+
+      @keyframes beaconCore {
+        0%, 100% {
+          opacity: 0.6;
+          fill: #58a6ff;
+        }
+        50% {
+          opacity: 1;
+          fill: #79c0ff;
+        }
       }
 
-      .type-text { animation: type 12s steps(35, end) infinite; }
-      .cursor-block { animation: cursorBlink 0.8s step-end infinite, cursorSlide 12s steps(35, end) infinite; }
-      
-      .code-l1 { animation: typeLine1 12s infinite; }
-      .code-l2 { animation: typeLine2 12s infinite; }
-      .code-l3 { animation: typeLine3 12s infinite; }
-      .code-l4 { animation: typeLine4 12s infinite; }
+      @keyframes subtleGlow {
+        0%, 100% { opacity: 0.3; }
+        50% { opacity: 0.6; }
+      }
 
-      .heat-fast { animation: pulseHeatmap 3s ease-in-out infinite; }
-      .heat-slow { animation: pulseHeatmapSlow 5s ease-in-out infinite; }
+      .cursor-block {
+        animation: cursorBlink 0.9s step-end infinite;
+      }
+
+      .curve-wave {
+        stroke-dasharray: 45 220;
+        animation: travelWave 3.2s cubic-bezier(0.2, 0.8, 0.4, 1) infinite;
+      }
+
+      .beacon-ring {
+        animation: beaconRing 2.2s ease-out infinite;
+      }
+
+      .beacon-core {
+        animation: beaconCore 2.2s ease-in-out infinite;
+      }
+
+      .asymptote-line {
+        animation: subtleGlow 4s ease-in-out infinite;
+      }
     </style>
+
+    <!-- Linear Gradients for Asymptote Curve -->
+    <linearGradient id="curveGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#388bfd" stop-opacity="0.3"/>
+      <stop offset="60%" stop-color="#58a6ff" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#79c0ff" stop-opacity="1"/>
+    </linearGradient>
 
     <!-- Faint Blueprint/Dot Grid Pattern -->
     <pattern id="dotGrid" width="16" height="16" patternUnits="userSpaceOnUse">
@@ -75,81 +122,100 @@
   <rect x="283" y="30" width="5" height="1" fill="#58a6ff"/>
   <rect x="283" y="270" width="5" height="1" fill="#58a6ff"/>
 
-  <!-- HEADER TEXT: extremely clean and prominent -->
-  <text class="type-text" x="320" y="100"
-        font-family="'Consolas', 'JetBrains Mono', monospace"
-        font-size="30" font-weight="600" fill="#c9d1d9" letter-spacing="0.5">
-    still learning . . .
+  <!-- HEADER TEXT: philosophical quote -->
+  <text x="320" y="86"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', 'Consolas', monospace"
+        font-size="16.5" font-weight="600" fill="#e6edf3" letter-spacing="0.3">
+    Understanding is asymptotic; curiosity, unbounded
   </text>
-  <rect class="cursor-block" x="320" y="78" width="12" height="26" fill="#58a6ff"/>
+  <text x="320" y="109"
+        font-family="'PingFang SC', 'Noto Sans SC', 'Microsoft YaHei', sans-serif"
+        font-size="11.5" font-weight="400" fill="#8b949e" letter-spacing="1.8">
+    &#x6C42;&#x77E5;&#x65E0;&#x6B62;&#x5883;&#xFF0C;&#x63A2;&#x7D22;&#x65E0;&#x8FB9;&#x754C;&#x3002;
+  </text>
+  <rect class="cursor-block" x="484" y="99" width="5" height="12" fill="#58a6ff" opacity="0.8"/>
 
   <!-- Subtle separator line -->
-  <line x1="320" y1="125" x2="810" y2="125" stroke="#21262d" stroke-width="1"/>
+  <line x1="320" y1="126" x2="810" y2="126" stroke="#21262d" stroke-width="1"/>
 
   <!-- IDE / TERMINAL BLOCK -->
-  <rect x="320" y="150" width="490" height="120" rx="6" fill="#010409" stroke="#21262d" stroke-width="1"/>
+  <rect x="320" y="142" width="490" height="128" rx="6" fill="#010409" stroke="#21262d" stroke-width="1"/>
   
   <!-- Terminal Header / macOS dots -->
-  <rect x="320" y="150" width="490" height="24" rx="6" fill="#161b22"/>
-  <rect x="320" y="170" width="490" height="4" fill="#161b22"/>
-  <line x1="320" y1="174" x2="810" y2="174" stroke="#21262d" stroke-width="1"/>
+  <rect x="320" y="142" width="490" height="24" rx="6" fill="#161b22"/>
+  <rect x="320" y="162" width="490" height="4" fill="#161b22"/>
+  <line x1="320" y1="166" x2="810" y2="166" stroke="#21262d" stroke-width="1"/>
   
-  <circle cx="335" cy="162" r="4.5" fill="#484f58" opacity="0.6"/>
-  <circle cx="350" cy="162" r="4.5" fill="#484f58" opacity="0.6"/>
-  <circle cx="365" cy="162" r="4.5" fill="#484f58" opacity="0.6"/>
-  <text x="565" y="165" text-anchor="middle" font-family="'Consolas', monospace" font-size="10" fill="#484f58">routine.py</text>
+  <circle cx="335" cy="154" r="3.5" fill="#ff5f56" opacity="0.85"/>
+  <circle cx="347" cy="154" r="3.5" fill="#ffbd2e" opacity="0.85"/>
+  <circle cx="359" cy="154" r="3.5" fill="#27c93f" opacity="0.85"/>
+  <text x="565" y="157" text-anchor="middle" font-family="'Consolas', monospace" font-size="10" fill="#8b949e">asymptote.py</text>
+  <text x="795" y="157" text-anchor="end" font-family="'Consolas', monospace" font-size="9" fill="#58a6ff" opacity="0.7">lim &#x2192; 1.0</text>
 
-  <!-- ANIMATED CODE SNIPPET (Focus purely on learning) -->
-  <g font-family="'Consolas', 'JetBrains Mono', monospace" font-size="12">
-    <!-- Line 1 -->
-    <g class="code-l1">
-      <text x="335" y="198" fill="#ff7b72">async def</text>
-      <text x="405" y="198" fill="#d2a8ff">execute_routine</text>
-      <text x="510" y="198" fill="#c9d1d9">(dev):</text>
-    </g>
-    <!-- Line 2 -->
-    <g class="code-l2">
-      <text x="360" y="218" fill="#ff7b72">while</text>
-      <text x="398" y="218" fill="#79c0ff">True</text>
-      <text x="428" y="218" fill="#c9d1d9">:</text>
-    </g>
-    <!-- Line 3 -->
-    <g class="code-l3">
-      <text x="385" y="238" fill="#ff7b72">await</text>
-      <text x="425" y="238" fill="#c9d1d9">dev.</text>
-      <text x="453" y="238" fill="#d2a8ff">learn</text>
-      <text x="488" y="238" fill="#c9d1d9">()</text>
-    </g>
-    <!-- Line 4 -->
-    <g class="code-l4">
-      <text x="385" y="258" fill="#c9d1d9">dev.</text>
-      <text x="413" y="258" fill="#d2a8ff">commit_progress</text>
-      <text x="518" y="258" fill="#c9d1d9">()</text>
-    </g>
+  <!-- LEFT: CODE DEFINITION (Asymptotic Understanding) -->
+  <g font-family="'Consolas', 'JetBrains Mono', monospace" font-size="10.5">
+    <text x="336" y="186" fill="#8b949e"># knowledge approaches limit</text>
+    
+    <text x="336" y="203">
+      <tspan fill="#ff7b72">def </tspan>
+      <tspan fill="#d2a8ff">knowledge</tspan>
+      <tspan fill="#c9d1d9">(t):</tspan>
+    </text>
+
+    <text x="336" y="220">
+      <tspan fill="#c9d1d9">    </tspan>
+      <tspan fill="#ff7b72">return </tspan>
+      <tspan fill="#79c0ff">1.0 </tspan>
+      <tspan fill="#ff7b72">- </tspan>
+      <tspan fill="#79c0ff">exp</tspan>
+      <tspan fill="#c9d1d9">(-t)</tspan>
+    </text>
+
+    <text x="336" y="240" fill="#8b949e"># curiosity: unbounded</text>
+
+    <text x="336" y="257">
+      <tspan fill="#79c0ff">curiosity </tspan>
+      <tspan fill="#ff7b72">= </tspan>
+      <tspan fill="#ffa657">float</tspan>
+      <tspan fill="#c9d1d9">(</tspan>
+      <tspan fill="#a5d6ff">"inf"</tspan>
+      <tspan fill="#c9d1d9">)</tspan>
+    </text>
   </g>
 
-  <!-- MINI GITHUB HEATMAP IN CORNER (Represents consistent effort) -->
-  <g transform="translate(710, 225)">
-    <!-- Row 1 -->
-    <rect x="0" y="0" width="8" height="8" rx="2" fill="#0e4429" />
-    <rect x="11" y="0" width="8" height="8" rx="2" fill="#006d32" class="heat-slow"/>
-    <rect x="22" y="0" width="8" height="8" rx="2" fill="#26a641" />
-    <rect x="33" y="0" width="8" height="8" rx="2" fill="#0e4429" />
-    <rect x="44" y="0" width="8" height="8" rx="2" fill="#39d353" class="heat-fast"/>
-    
-    <!-- Row 2 -->
-    <rect x="0" y="11" width="8" height="8" rx="2" fill="#26a641" class="heat-fast"/>
-    <rect x="11" y="11" width="8" height="8" rx="2" fill="#0e4429" />
-    <rect x="22" y="11" width="8" height="8" rx="2" fill="#39d353" />
-    <rect x="33" y="11" width="8" height="8" rx="2" fill="#006d32" class="heat-slow"/>
-    <rect x="44" y="11" width="8" height="8" rx="2" fill="#26a641" />
-    
-    <!-- Row 3 -->
-    <rect x="0" y="22" width="8" height="8" rx="2" fill="#0e4429" />
-    <rect x="11" y="22" width="8" height="8" rx="2" fill="#26a641" />
-    <rect x="22" y="22" width="8" height="8" rx="2" fill="#006d32" />
-    <rect x="33" y="22" width="8" height="8" rx="2" fill="#39d353" class="heat-fast"/>
-    <rect x="44" y="22" width="8" height="8" rx="2" fill="#0e4429" />
-  </g>
+  <!-- VERTICAL DIVIDER -->
+  <line x1="545" y1="172" x2="545" y2="262" stroke="#21262d" stroke-width="1" stroke-dasharray="2 3"/>
 
+  <!-- RIGHT: MATHEMATICAL ASYMPTOTE VISUALIZATION -->
+  <g>
+    <!-- Axis lines -->
+    <line x1="562" y1="254" x2="792" y2="254" stroke="#30363d" stroke-width="1"/>
+    <line x1="562" y1="257" x2="562" y2="182" stroke="#30363d" stroke-width="1"/>
+
+    <!-- Coordinate labels -->
+    <text x="556" y="257" text-anchor="end" font-family="'Consolas', monospace" font-size="8" fill="#484f58">0</text>
+    <text x="556" y="196" text-anchor="end" font-family="'Consolas', monospace" font-size="8" fill="#58a6ff" opacity="0.8">1.0</text>
+    <text x="792" y="264" text-anchor="end" font-family="'Consolas', monospace" font-size="8" fill="#8b949e">t &#x2192; &#x221e;</text>
+
+    <!-- Horizontal Asymptote Line (y = 193) -->
+    <line class="asymptote-line" x1="562" y1="193" x2="792" y2="193"
+          stroke="#58a6ff" stroke-width="1" stroke-dasharray="3 4" opacity="0.35"/>
+    <text x="792" y="188" text-anchor="end" font-family="'Consolas', monospace" font-size="8" fill="#58a6ff" opacity="0.65">lim f(t) = 1.0</text>
+
+    <!-- Base Curve: static faint trajectory -->
+    <path d="M 562,254 C 595,218 640,199 685,194.5 C 725,193.3 760,193.1 785,193.04"
+          fill="none" stroke="#1f6feb" stroke-width="1.2" opacity="0.25" stroke-linecap="round"/>
+
+    <!-- Dynamic knowledge wave traveling asymptotically towards limit -->
+    <path class="curve-wave"
+          d="M 562,254 C 595,218 640,199 685,194.5 C 725,193.3 760,193.1 785,193.04"
+          fill="none" stroke="url(#curveGrad)" stroke-width="2" stroke-linecap="round"/>
+
+    <!-- Horizon Beacon at frontier point (785, 193.04) -->
+    <circle class="beacon-ring" cx="785" cy="193.04" r="2.5" fill="none" stroke="#58a6ff"/>
+    <circle class="beacon-core" cx="785" cy="193.04" r="2.5"/>
+
+    <!-- Unbounded Curiosity Micro-Tag -->
+    <text x="670" y="244" font-family="'Consolas', monospace" font-size="8" fill="#bc8cff" opacity="0.75">curiosity: [ &#x221e; ]</text>
+  </g>
 </svg>

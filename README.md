@@ -1,7 +1,14 @@
 <div align="center">
-  <img src="./saitama-ok.svg" alt="Saitama - Still Learning" width="850"/>
+  <img src="./saitama-ok.svg" alt="WuXin - Understanding is asymptotic; curiosity, unbounded" width="850"/>
   
-  <br/>
+  <br/><br/>
+
+  <!-- Recognition -->
+  <a href="https://hub.xerj.org/contributors/apuravmanhas">
+    <img src="https://hub.xerj.org/contributors/apuravmanhas/badge.svg" alt="XERJ Corpus Hub contributor" />
+  </a>
+
+  <br/><br/>
   
   <!-- Social Links -->
   <a href="https://www.linkedin.com/in/apurav-manhas%F0%9F%90%A7-253719381/">
