@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="./vortex-banner.svg" alt="WuXin - Understanding is asymptotic; curiosity, unbounded" width="850"/>
+  <img src="./horizon-banner.svg" alt="WuXin - Understanding is asymptotic; curiosity, unbounded" width="850"/>
   
   <br/><br/>
 
