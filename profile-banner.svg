@@ -140,7 +140,7 @@
   <!-- Subtle separator line -->
   <line x1="348" y1="108" x2="836" y2="108" stroke="#21262d" stroke-width="1"/>
 
-  <!-- IDE / TERMINAL BLOCK (Enlarged and perfectly padded) -->
+  <!-- IDE / TERMINAL BLOCK -->
   <rect x="348" y="120" width="488" height="188" rx="7" fill="#010409" stroke="#21262d" stroke-width="1"/>
   
   <!-- Terminal Header / macOS dots -->
@@ -154,7 +154,7 @@
   <text x="592" y="137" text-anchor="middle" font-family="'Consolas', monospace" font-size="11" fill="#8b949e">asymptote.py</text>
   <text x="826" y="137" text-anchor="end" font-family="'Consolas', monospace" font-size="10" fill="#58a6ff" opacity="0.8">lim &#x2192; 1.0</text>
 
-  <!-- LEFT: CODE DEFINITION (Clean spacing, zero overlap with divider) -->
+  <!-- LEFT: CODE DEFINITION (Clean, untouched) -->
   <g font-family="'Consolas', 'JetBrains Mono', monospace" font-size="12">
     <text x="362" y="178">
       <tspan fill="#ff7b72">def </tspan>
@@ -186,43 +186,43 @@
     </text>
   </g>
 
-  <!-- VERTICAL DIVIDER (Padded: 16px from code, 32px from Y-axis) -->
-  <line x1="544" y1="152" x2="544" y2="296" stroke="#21262d" stroke-width="1" stroke-dasharray="2 3"/>
+  <!-- VERTICAL DIVIDER -->
+  <line x1="540" y1="152" x2="540" y2="296" stroke="#21262d" stroke-width="1" stroke-dasharray="2 3"/>
 
-  <!-- RIGHT: MATHEMATICAL ASYMPTOTE VISUALIZATION (Cleanly Aligned & High Readability) -->
+  <!-- RIGHT: MATHEMATICAL ASYMPTOTE VISUALIZATION (Tuned Graph Text Sizes) -->
   <g>
     <!-- Coordinate axes -->
-    <line x1="576" y1="280" x2="822" y2="280" stroke="#30363d" stroke-width="1.2"/>
-    <line x1="576" y1="283" x2="576" y2="166" stroke="#30363d" stroke-width="1.2"/>
+    <line x1="578" y1="280" x2="824" y2="280" stroke="#30363d" stroke-width="1.2"/>
+    <line x1="578" y1="283" x2="578" y2="166" stroke="#30363d" stroke-width="1.2"/>
 
-    <!-- Y-Axis Coordinate labels (Clear of vertical divider: positioned at x=568) -->
-    <text x="568" y="187" text-anchor="end" font-family="'Consolas', monospace" font-size="11" font-weight="600" fill="#58a6ff">1.0</text>
-    <text x="568" y="284" text-anchor="end" font-family="'Consolas', monospace" font-size="11" font-weight="500" fill="#6e7681">0</text>
+    <!-- Y-Axis labels (Subtly enlarged to 12px for crisp readability) -->
+    <text x="570" y="188" text-anchor="end" font-family="'Consolas', monospace" font-size="12" font-weight="600" fill="#58a6ff">1.0</text>
+    <text x="570" y="284" text-anchor="end" font-family="'Consolas', monospace" font-size="12" font-weight="500" fill="#6e7681">0</text>
 
-    <!-- X-Axis Coordinate label -->
-    <text x="822" y="297" text-anchor="end" font-family="'Consolas', monospace" font-size="11.5" font-weight="500" fill="#8b949e">t &#x2192; &#x221e;</text>
+    <!-- X-Axis label (Subtly enlarged to 13px, bold, prominent infinity) -->
+    <text x="824" y="298" text-anchor="end" font-family="'Consolas', monospace" font-size="13" font-weight="500" fill="#8b949e">t &#x2192; &#x221e;</text>
 
     <!-- Horizontal Asymptote Line (y = 184) -->
-    <line class="asymptote-line" x1="576" y1="184" x2="820" y2="184"
+    <line class="asymptote-line" x1="578" y1="184" x2="822" y2="184"
           stroke="#58a6ff" stroke-width="1" stroke-dasharray="4 4" opacity="0.45"/>
 
-    <!-- Asymptote Label (Elevated above dashed line with clear vertical clearance) -->
-    <text x="812" y="174" text-anchor="end" font-family="'Consolas', monospace" font-size="11" font-weight="500" fill="#58a6ff" opacity="0.9">L = 1.0 (asymptote)</text>
+    <!-- Asymptote Label (Subtly enlarged to 12px, clean clearance above dashed line) -->
+    <text x="814" y="173" text-anchor="end" font-family="'Consolas', monospace" font-size="12" font-weight="500" fill="#58a6ff" opacity="0.9">L = 1.0 (asymptote)</text>
 
     <!-- Base Curve: static faint trajectory -->
-    <path d="M 576,280 C 614,218 668,189 730,185.2 C 770,184.2 800,184.05 820,184.02"
+    <path d="M 578,280 C 616,218 670,189 732,185.2 C 772,184.2 802,184.05 822,184.02"
           fill="none" stroke="#1f6feb" stroke-width="1.5" opacity="0.25" stroke-linecap="round"/>
 
     <!-- Dynamic knowledge wave traveling asymptotically towards limit -->
     <path class="curve-wave"
-          d="M 576,280 C 614,218 668,189 730,185.2 C 770,184.2 800,184.05 820,184.02"
+          d="M 578,280 C 616,218 670,189 732,185.2 C 772,184.2 802,184.05 822,184.02"
           fill="none" stroke="url(#curveGrad)" stroke-width="2.5" stroke-linecap="round"/>
 
-    <!-- Horizon Beacon at frontier point (820, 184.02) -->
-    <circle class="beacon-ring" cx="820" cy="184.02" r="3.5" fill="none" stroke="#58a6ff"/>
-    <circle class="beacon-core" cx="820" cy="184.02" r="3.5"/>
+    <!-- Horizon Beacon at frontier point (822, 184.02) -->
+    <circle class="beacon-ring" cx="822" cy="184.02" r="3.5" fill="none" stroke="#58a6ff"/>
+    <circle class="beacon-core" cx="822" cy="184.02" r="3.5"/>
 
-    <!-- Unbounded Curiosity Badge (Prominent, high readability, beautiful lilac) -->
-    <text x="696" y="258" font-family="'Consolas', monospace" font-size="11.5" font-weight="600" fill="#d2a8ff" opacity="0.95">curiosity: [ &#x221e; ]</text>
+    <!-- Unbounded Curiosity Badge (Subtly enlarged to 13px, radiant lilac, bolder infinity) -->
+    <text x="682" y="258" font-family="'Consolas', monospace" font-size="13" font-weight="600" fill="#d2a8ff" opacity="0.95">curiosity: [ &#x221e; ]</text>
   </g>
 </svg>

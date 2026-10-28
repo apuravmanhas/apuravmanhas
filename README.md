@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="./wuxin-banner.svg" alt="WuXin - Understanding is asymptotic; curiosity, unbounded" width="850"/>
+  <img src="./graph-banner.svg" alt="WuXin - Understanding is asymptotic; curiosity, unbounded" width="850"/>
   
   <br/><br/>
 
